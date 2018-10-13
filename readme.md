@@ -1,14 +1,11 @@
 ## Flashcards
 
 ### App Description
-`TODO://` Simple Flashcards app
+Simple Flashcards app
 
 ### App Walk-though
-`TODO://` 
 
 <img src="http://g.recordit.co/GrAtAM1x5B.gif" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [X] Create New Project in Xcode
