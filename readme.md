@@ -5,7 +5,7 @@ Simple Flashcards app
 
 ### App Walk-though
 
-<img src="http://recordit.co/4ooKeCSvLd" width=200><br>
+<img src="http://g.recordit.co/4ooKeCSvLd.gif" width=200><br>
 
 ## Required
 - [X] Create New Project in Xcode
