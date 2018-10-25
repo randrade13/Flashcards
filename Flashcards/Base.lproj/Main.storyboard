@@ -17,22 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UA6-nk-RAY">
+                                <rect key="frame" x="117" y="349" width="140" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Bogotá">
+                                    <color key="titleColor" red="0.47128380931051828" green="0.74650884325102473" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hpw-OC-b8i" appends="YES" id="7Yy-mc-VbR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtC-Pq-hdz">
+                                <rect key="frame" x="117" y="411" width="140" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Lima">
+                                    <color key="titleColor" red="0.47128380930000002" green="0.7465088433" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gut-rU-j6r" appends="YES" id="gdt-0G-frv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-1H-sMZ" userLabel="Btn Option Three">
+                                <rect key="frame" x="117" y="474" width="140" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Rio de Janeiro">
+                                    <color key="titleColor" red="0.47128380930000002" green="0.7465088433" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oCL-Zg-bQ4" appends="YES" id="gfa-zU-uHx"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-0i-LVq">
-                                <rect key="frame" x="82" y="188" width="210" height="196"/>
+                                <rect key="frame" x="72" y="122" width="230" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lima" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE2-lT-qcF">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="196"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.47128380930000002" green="0.7465088433" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Perú?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8P-3i-d45">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="196"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Perú?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8P-3i-d45">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.85003460618465176" green="0.97055132772020725" blue="0.86169655600876449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,6 +86,10 @@
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="oE2-lT-qcF" id="WvG-fI-JpH"/>
+                        <outlet property="btnOptionOne" destination="UA6-nk-RAY" id="zNH-0E-nsv"/>
+                        <outlet property="btnOptionThree" destination="IsD-1H-sMZ" id="GfK-s3-nEk"/>
+                        <outlet property="btnOptionTwo" destination="VtC-Pq-hdz" id="9MN-ms-UCd"/>
+                        <outlet property="card" destination="nOm-0i-LVq" id="lZT-18-Dea"/>
                         <outlet property="frontLabel" destination="V8P-3i-d45" id="JbZ-28-Nvh"/>
                     </connections>
                 </viewController>
@@ -57,6 +97,21 @@
                 <tapGestureRecognizer id="iCr-vE-79M">
                     <connections>
                         <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="ape-gm-Rmi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Hpw-OC-b8i">
+                    <connections>
+                        <action selector="didTapOptionOne:" destination="BYZ-38-t0r" id="hR1-Ce-pxF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gut-rU-j6r">
+                    <connections>
+                        <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" id="J0n-oo-lQy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oCL-Zg-bQ4">
+                    <connections>
+                        <action selector="didTapOptionThree:" destination="BYZ-38-t0r" id="5MZ-Xh-STQ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
