@@ -23,7 +23,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionThree: UIButton!
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //We Know the destination of the segue is the Navigation Controller
+        let navigationController = segue.destination as! UINavigationController
+        
+        //We Know the navigation controller only contains a creation view controller
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,6 +69,10 @@ class ViewController: UIViewController {
         
     }
     
+    func updateFlashcard(question: String, answer: String) {
+        frontLabel.text = question
+        backLabel.text = answer
+    }
     
     @IBAction func didTapOptionOne(_ sender: UITapGestureRecognizer) {
         frontLabel.isHidden = false}
