@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionThree: UIButton!
     
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //We Know the destination of the segue is the Navigation Controller
@@ -32,6 +33,17 @@ class ViewController: UIViewController {
         let creationController = navigationController.topViewController as! CreationViewController
         
         creationController.flashcardsController = self
+        
+        if segue.identifier == "EditSegue" {
+            creationController.initialQuestion = frontLabel.text
+        
+            creationController.initialCorrectAnswer = backLabel.text
+        
+            creationController.initialCorrectAnswer = btnOptionOne.currentTitle
+        
+            creationController.initalAnswerB = btnOptionTwo.currentTitle
+        
+            creationController.initialAnswerC = btnOptionThree.currentTitle}
         
     }
     override func viewDidLoad() {
@@ -69,16 +81,19 @@ class ViewController: UIViewController {
         
     }
     
-    func updateFlashcard(question: String, answer: String) {
+    func updateFlashcard(question: String, correctAnswer: String, answerB: String, answerC: String) {
         frontLabel.text = question
-        backLabel.text = answer
+        backLabel.text = correctAnswer
+        btnOptionOne.setTitle(correctAnswer, for: .normal)
+        btnOptionTwo.setTitle(answerB, for: .normal)
+        btnOptionThree.setTitle(answerC, for: .normal)
     }
     
     @IBAction func didTapOptionOne(_ sender: UITapGestureRecognizer) {
-        frontLabel.isHidden = false}
+        frontLabel.isHidden = true}
     
     @IBAction func didTapOptionTwo(_ sender: UITapGestureRecognizer) {
-        frontLabel.isHidden = true}
+        frontLabel.isHidden = false}
     
     @IBAction func didTapOptionThree(_ sender: Any) {
     frontLabel.isHidden = false}
