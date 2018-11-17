@@ -187,7 +187,7 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
         
         // Logging
-        print("Flashcards saved to User Defaults")
+        print("Flashcards have been saved to User Defaults")
     }
     
     func readSavedFlashcards(){
