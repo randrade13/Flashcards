@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         
         // Defualt initial cards
         if flashcards.count == 0 {
-            updateFlashcard(question: "What is the capital of Perú?", correctAnswer: "Lima", answerB: "Bogotá", answerC: "Rio de Janeiro", isExisting: false)
+            updateFlashcard(question: "What is the capital of Perú?", correctAnswer: "Lima", answerB: "Bogotá", answerC: "Rio de Janeiro", isExisting: true)
             
         }
         else{
@@ -132,7 +132,7 @@ class ViewController: UIViewController {
         else if currentIndex == 0{
             
             // Add default card
-            updateFlashcard(question: "What is the capital of Perú?", correctAnswer: "Lima", answerB: "Bogotá", answerC: "Rio de Janeiro", isExisting: false)
+            updateFlashcard(question: "What is the capital of Perú?", correctAnswer: "Lima", answerB: "Bogotá", answerC: "Rio de Janeiro", isExisting: true)
         
             // Delete previous card
             flashcards.remove(at: currentIndex - 1)
