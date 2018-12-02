@@ -24,6 +24,8 @@ class CreationViewController: UIViewController {
     var initialCorrectAnswer: String? = "Correct Answer"
     var initalAnswerB: String? = "Answer B"
     var initialAnswerC: String? = "Answer C"
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class CreationViewController: UIViewController {
         answerCTextField.text = initialAnswerC
 
         // Do any additional setup after loading the view.
+        
     }
     
 
@@ -73,7 +76,12 @@ class CreationViewController: UIViewController {
         }
         
         else {
-            flashcardsController.updateFlashcard(question: questionText!, correctAnswer: correctAnswerText!, answerB: answerBText!, answerC: answerCText!)
+            
+            var isExisting = false
+            if initialQuestion != nil {
+                isExisting = true
+            }
+        flashcardsController.updateFlashcard(question: questionText!, correctAnswer: correctAnswerText!, answerB: answerBText!, answerC: answerCText!, isExisting: isExisting)
         
             dismiss(animated: true)}
     }

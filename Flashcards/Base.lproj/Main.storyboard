@@ -45,6 +45,14 @@
                                             <segue destination="5ZR-gK-s14" kind="show" identifier="EditSegue" id="tOg-Pd-Aon"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQk-Af-1zN">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nhj-Ti-g70"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -128,6 +136,7 @@
                         <outlet property="btnOptionThree" destination="IsD-1H-sMZ" id="GfK-s3-nEk"/>
                         <outlet property="btnOptionTwo" destination="VtC-Pq-hdz" id="9MN-ms-UCd"/>
                         <outlet property="card" destination="nOm-0i-LVq" id="lZT-18-Dea"/>
+                        <outlet property="deleteButton" destination="mQk-Af-1zN" id="28m-ha-ejc"/>
                         <outlet property="frontLabel" destination="V8P-3i-d45" id="JbZ-28-Nvh"/>
                         <outlet property="nextButton" destination="S8W-vm-P63" id="Es2-lm-xIv"/>
                         <outlet property="prevButton" destination="A9E-7T-d0z" id="I9Y-MI-03e"/>
