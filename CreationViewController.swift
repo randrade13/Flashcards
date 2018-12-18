@@ -20,12 +20,10 @@ class CreationViewController: UIViewController {
     
     @IBOutlet weak var answerCTextField: UITextField!
     
-    var initialQuestion: String? = "Question"
+    var initialQuestion: String?
     var initialCorrectAnswer: String? = "Correct Answer"
     var initalAnswerB: String? = "Answer B"
     var initialAnswerC: String? = "Answer C"
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +37,10 @@ class CreationViewController: UIViewController {
         answerCTextField.text = initialAnswerC
 
         // Do any additional setup after loading the view.
-        
     }
     
 
-    let alert = UIAlertController(title: "Missing text you twat", message: "You need to enter both a question and an answer", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Missing text!", message: "You need to enter both a question and an answer", preferredStyle: .alert)
     let okAction = UIAlertAction(title: "Ok", style: .default)
     var ok_error_flag = false
     
@@ -77,11 +74,11 @@ class CreationViewController: UIViewController {
         
         else {
             
-            var isExisting = false
+            var isExisting =  false
             if initialQuestion != nil {
-                isExisting = true
-            }
-        flashcardsController.updateFlashcard(question: questionText!, correctAnswer: correctAnswerText!, answerB: answerBText!, answerC: answerCText!, isExisting: isExisting)
+                isExisting = true}
+            
+            flashcardsController.updateFlashcard(question: questionText!, correctAnswer: correctAnswerText!, answerB: answerBText!, answerC: answerCText!, isExisting: isExisting)}
         
             dismiss(animated: true)}
     }
@@ -96,4 +93,4 @@ class CreationViewController: UIViewController {
     }
     */
 
-}
+
