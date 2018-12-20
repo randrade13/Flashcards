@@ -40,6 +40,9 @@ class ViewController: UIViewController {
     //Current flashcard Index
     var currentIndex = 0
     
+    //Correct Button
+    var correctAnswerButton: UIButton!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //We Know the destination of the segue is the Navigation Controller
@@ -62,6 +65,20 @@ class ViewController: UIViewController {
             creationController.initialAnswerC = btnOptionThree.currentTitle}
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addPopToView(poppingView: card)
+        
+        addPopToButton(poppingButton: btnOptionOne)
+        addPopToButton(poppingButton: btnOptionTwo)
+        addPopToButton(poppingButton: btnOptionThree)
+        addPopToButton(poppingButton: prevButton)
+        addPopToView(poppingView: nextButton)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -101,6 +118,30 @@ class ViewController: UIViewController {
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         flipFlashcard()
+    }
+    
+    func  addPopToView(poppingView: UIView){
+        
+        //object starts invisible and slightly smaller in size
+        poppingView.alpha =  0.0
+        poppingView.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        //animation
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations:{
+            poppingView.alpha = 1.0
+            poppingView.transform = CGAffineTransform.identity })
+    }
+    
+    func  addPopToButton(poppingButton: UIButton){
+        
+        //object starts invisible and slightly smaller in size
+        poppingButton.alpha =  0.0
+        poppingButton.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        //animation
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations:{
+            poppingButton.alpha = 1.0
+            poppingButton.transform = CGAffineTransform.identity })
     }
     
     func flipFlashcard() {
@@ -200,9 +241,17 @@ class ViewController: UIViewController {
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.correctAnswer
         
-        btnOptionOne.setTitle(currentFlashcard.correctAnswer, for: .normal)
-        btnOptionTwo.setTitle(currentFlashcard.answerB, for: .normal)
-        btnOptionThree.setTitle(currentFlashcard.answerC, for: .normal)
+        //Update Buttons
+        let buttons = [btnOptionOne, btnOptionTwo,  btnOptionThree].shuffled()
+        let answers =  [currentFlashcard.correctAnswer, currentFlashcard.answerB, currentFlashcard.answerC].shuffled()
+       
+        for (button, answer) in zip(buttons, answers){
+            //Set title  of random button with random answer
+            button?.setTitle(answer, for: .normal)
+            
+            //If correct answer then  save button
+            if answer  == currentFlashcard.correctAnswer {
+                correctAnswerButton = button}}
         
     }
     
@@ -267,13 +316,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOptionOne(_ sender: UITapGestureRecognizer) {
-        frontLabel.isHidden = true}
+        if btnOptionOne ==  correctAnswerButton{
+            flipFlashcard()}
+        else{
+            frontLabel.isHidden = false
+            btnOptionOne.isEnabled  =  false}
+        }
     
     @IBAction func didTapOptionTwo(_ sender: UITapGestureRecognizer) {
-        frontLabel.isHidden = false}
+        if btnOptionTwo ==  correctAnswerButton{
+            flipFlashcard()}
+        else{
+            frontLabel.isHidden = false
+            btnOptionTwo.isEnabled  =  false}
+    }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-    frontLabel.isHidden = false}
+        if btnOptionThree ==  correctAnswerButton{
+            flipFlashcard()}
+        else{
+            frontLabel.isHidden = false
+            btnOptionThree.isEnabled  =  false}
+    }
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         
